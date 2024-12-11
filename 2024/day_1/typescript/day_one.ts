@@ -26,11 +26,17 @@ const read_file = (data: string): number[][] => {
   return [one, two]
 }
 
-const data: string = fs.readFileSync('input.txt', 'utf8')
+function main() {
+  const data: string = fs.readFileSync('input.txt', 'utf8')
 
-const arrays: number[][] = read_file(data)
+  const arrays: number[][] = read_file(data)
 
-const total: number = calculate_distance(arrays[0], arrays[1])
+  const total: number = calculate_distance(arrays[0], arrays[1])
 
-console.log(total)
+  console.log(total)
+}
+
+if (require.main === module) {
+  main();
+}
 
