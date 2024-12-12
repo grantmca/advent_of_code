@@ -8,4 +8,23 @@ def calcuate_safety(data):
             return False
     return True
 
+def main():
+
+    output = []
+    count = 0
+
+    with open('input.txt', 'r') as file:
+        for line in file:
+            output.append([int(v) for v in line.split()])
+
+    for a in output:
+        if calcuate_safety(a):
+            count = count + 1
+
+    print(count)
+
+
+if __name__ == "__main__":
+    main()
+
 
